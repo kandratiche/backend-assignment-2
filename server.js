@@ -94,7 +94,7 @@ function getCountryData(countryName) {
 
 function getExchangeRates(currencyCode) {
     return new Promise((resolve, reject) => {
-        const url = `https://open.er-api.com/v6/latest/${currencyCode}`;
+        const url = `https://v6.exchangerate-api.com/v6/${process.env.EXCHANGE_API_KEY}/latest/${currencyCode}`;
         
         https.get(url, (response) => {
             let data = '';
